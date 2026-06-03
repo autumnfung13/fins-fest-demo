@@ -1,18 +1,25 @@
-# Salesforce DX Project: Next Steps
+# Prompt Helper LWC
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Interactive multi-step carousel component for FINS Fest demo.
 
-## How Do You Plan to Deploy Your Changes?
+## Overview
+4-step walkthrough with suggested questions for different use cases.
+Each step shows clickable question cards that copy to clipboard.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Files
+- `promptHelper.html` - Component template
+- `promptHelper.js` - Controller with STEPS array
+- `promptHelper.css` - Custom styling
+- `promptHelper.js-meta.xml` - Metadata (exposed on Home Pages)
 
-## Configure Your Salesforce DX Project
+## Configuration
+Edit the STEPS array in `promptHelper.js` to change:
+- Question text
+- Number of steps
+- Titles and subtitles
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Step 4 renders as single full-width card automatically.
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Deployment
+```bash
+sf project deploy start --source-dir force-app/main/default/lwc/promptHelper --target-org "FINS Demo"
