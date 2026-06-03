@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Prompt Helper</masterLabel>
+    <description>Onboarding suggestion card with copy-to-clipboard prompts.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
+            <property
+                name="clientName"
+                type="String"
+                label="Client Name"
+                default="Julie Morris"
+                description="Client name referenced on step 1." />
+            <property
+                name="currentStep"
+                type="Integer"
+                label="Starting Step (zero-indexed)"
+                default="0"
+                description="Zero-based index of the step shown when the carousel loads." />
+            <property
+                name="totalSteps"
+                type="Integer"
+                label="Total Steps"
+                default="4"
+                description="Total number of steps in the carousel." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

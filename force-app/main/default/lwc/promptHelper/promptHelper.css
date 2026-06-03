@@ -1,0 +1,241 @@
+:host {
+    display: block;
+    background-color: #f3f3f3;
+    min-height: 100%;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background-color: #f3f3f3;
+    min-height: 600px;
+}
+
+.step-indicator {
+    color: #1589ee;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    align-self: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.card-content {
+    text-align: center;
+}
+
+@keyframes fadeSlideInA {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideInB {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-0 {
+    animation: fadeSlideInA 280ms ease-out;
+}
+
+.fade-1 {
+    animation: fadeSlideInB 280ms ease-out;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.icon-square {
+    width: 56px;
+    height: 56px;
+    background-color: #1589ee;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px rgba(21, 137, 238, 0.15);
+}
+
+.icon-square lightning-icon {
+    --sds-c-icon-color-foreground-default: #ffffff;
+}
+
+.heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #16325c;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.subheading {
+    font-size: 14px;
+    color: #706e6b;
+    margin: 0 0 1rem 0;
+}
+
+.body-text {
+    font-size: 14px;
+    color: #16325c;
+    margin: 0 0 1.25rem 0;
+}
+
+.try-asking-label {
+    font-size: 11px;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.75rem 0;
+}
+
+.suggestions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.suggestions-grid.single-column {
+    grid-template-columns: 1fr;
+}
+
+.suggestion-card {
+    border: 1px solid #dddbda;
+    border-radius: 8px;
+    padding: 0.875rem 1rem;
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+.suggestion-card:hover {
+    border-color: #1589ee;
+    box-shadow: 0 2px 6px rgba(21, 137, 238, 0.1);
+}
+
+.suggestion-text {
+    color: #1589ee;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.copy-icon {
+    --sds-c-icon-color-foreground-default: #1589ee;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0 1.25rem 0;
+    min-height: 40px;
+}
+
+.btn {
+    padding: 0.625rem 1.5rem;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    min-width: 120px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #16325c;
+    border-color: #dddbda;
+}
+
+.btn-secondary:hover {
+    background-color: #f4f6f9;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #1589ee 0%, #0070d2 100%);
+    color: #ffffff;
+    border-color: #0070d2;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #0070d2 0%, #005fb2 100%);
+}
+
+.chevron {
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #dddbda;
+    display: inline-block;
+    transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.dot-active {
+    background-color: #1589ee;
+    width: 10px;
+    height: 10px;
+}
+
+.toast-message {
+    position: absolute;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #16325c;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}

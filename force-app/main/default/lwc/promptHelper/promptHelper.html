@@ -1,0 +1,67 @@
+<template>
+    <div class="page-container">
+        <div class="step-indicator">Step {stepDisplay} of {displayTotalSteps}</div>
+
+        <div class="card">
+            <div class={cardContentClass}>
+                <div class="icon-wrapper">
+                    <div class="icon-square">
+                        <lightning-icon
+                            icon-name="standard:groups"
+                            alternative-text="Groups"
+                            size="medium"
+                            variant="inverse">
+                        </lightning-icon>
+                    </div>
+                </div>
+
+                <h1 class="heading">{currentTitle}</h1>
+                <p class="subheading">{currentSubtitle}</p>
+                <p class="body-text">{currentBody}</p>
+
+                <p class="try-asking-label">TRY ASKING:</p>
+
+                <div class={gridClass}>
+                    <template for:each={currentQuestions} for:item="suggestion">
+                        <div
+                            key={suggestion}
+                            class="suggestion-card"
+                            data-text={suggestion}
+                            onclick={handleSuggestionClick}>
+                            <span class="suggestion-text">{suggestion}</span>
+                            <lightning-icon
+                                icon-name="utility:copy"
+                                alternative-text="Copy"
+                                size="x-small"
+                                class="copy-icon">
+                            </lightning-icon>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <template if:true={showToast}>
+                <div class="toast-message">Copied to clipboard!</div>
+            </template>
+
+            <div class="button-row">
+                <template if:false={isFirstStep}>
+                    <button class="btn btn-secondary" onclick={handlePrevious}>
+                        <span class="chevron">&lsaquo;</span> Previous
+                    </button>
+                </template>
+                <template if:false={isLastStep}>
+                    <button class="btn btn-primary" onclick={handleNext}>
+                        Next
+                    </button>
+                </template>
+            </div>
+
+            <div class="pagination-dots">
+                <template for:each={dots} for:item="dot">
+                    <span key={dot.key} class={dot.class}></span>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>
